@@ -1,5 +1,5 @@
 ## Assignment of the Research Track 2 course 
- GINNE VIKAS REDDY (matricola 5061211)
+ VISHAL VALLAMKONDA (matricola 5071089)
 
 # About the assignment
 The robot starts from the origin with out any orientation or velocity. When the user is requestes the gotopoint requests the (x,y,theta)  to position server and position server returns the values. Action server is used to pause the simullation.
@@ -54,7 +54,7 @@ catkin_make
 clone the repository 
 
 ```
-git clone -b action https://github.com/vikasreddy636/rt2_assignment1.git
+git clone -b action https://github.com/Vallamkondavishal/rt2_assignment1.git
 ```
 
 Refresh the workspace using
