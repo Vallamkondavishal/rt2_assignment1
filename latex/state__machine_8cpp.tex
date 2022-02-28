@@ -1,0 +1,106 @@
+\hypertarget{state__machine_8cpp}{}\doxysection{src/state\+\_\+machine.cpp File Reference}
+\label{state__machine_8cpp}\index{src/state\_machine.cpp@{src/state\_machine.cpp}}
+
+
+This file implements the finite state machine behaviour.  
+
+
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Command.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rt2\+\_\+assignment1/\+Random\+Position.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$rt2\+\_\+assignment1/\+Gotopoint\+Action.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/simple\+\_\+action\+\_\+client.\+h$>$}\newline
+{\ttfamily \#include $<$actionlib/client/terminal\+\_\+state.\+h$>$}\newline
+Include dependency graph for state\+\_\+machine.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state__machine_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}{user\+\_\+interface}} (rt2\+\_\+assignment1\+::\+Command\+::\+Request \&req, rt2\+\_\+assignment1\+::\+Command\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em \+: It receives the commands from the user\+\_\+interface node \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em \+: The main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}\label{state__machine_8cpp_ab376b87f96a574a793c03c53e75afec8}} 
+bool {\bfseries start} = false
+\item 
+\mbox{\Hypertarget{state__machine_8cpp_a7b41b5ac885385d5a2f18273038644e9}\label{state__machine_8cpp_a7b41b5ac885385d5a2f18273038644e9}} 
+bool {\bfseries not\+\_\+moving} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements the finite state machine behaviour. 
+
+@ package rt2\+\_\+assignment1
+
+\begin{DoxyAuthor}{Author}
+Vishal Vallamkonda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+28/02/2022
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ None
+
+Publishes to\+: ~\newline
+ /reach /time
+
+Services\+: ~\newline
+ /user\+\_\+interface
+
+Client\+: ~\newline
+ /position\+\_\+server
+
+Action Client\+: ~\newline
+ /go\+\_\+to\+\_\+point
+
+Description\+: ~\newline
+ This node is a server for the user interface, it receives what the user writes and it acts depending on it. If the client ask for the random position behaviour it calls the server /random\+\_\+position and it waits for it to be finished, it also checks if the client requests the behaviour to stop and in that case it cancels the previous goal and waits for the next command. In the mean time it also sends information to the user\+\_\+interface node, it publishes a topic when a goal has been reached (True) or cancelled (False) so that the user\+\_\+interface can keep track of the reached and cancelled goals. Also whenevera goal is reached it publishes on the topic /time the time in seconds between the request of the goal and the completion of it. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{state__machine_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!main@{main}}
+\index{main@{main}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+\+: The main function 
+
+\begin{DoxyReturn}{Returns}
+\+: 0
+\end{DoxyReturn}
+This function initializes the ros node, the server, the clients, the publishers. Then if ros is running it checks the global variable start. If start is true it is also checked if the robot is already moving towards a goal with the global variable notgoing. If the robot is not already moving a new goal is set, if on the other hand the robot was already going it is checked if the goal is reached, in this case information are published on the topics /time and /reach. If the global variable start is false I check if the robot is already moving, if that is the case I cancel the goal and publish information on the /reach topic. If the robot is still and the start variable is false the program does nothing. \mbox{\Hypertarget{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}\label{state__machine_8cpp_a1a9543636935547580c0657f4c7c0c2b}} 
+\index{state\_machine.cpp@{state\_machine.cpp}!user\_interface@{user\_interface}}
+\index{user\_interface@{user\_interface}!state\_machine.cpp@{state\_machine.cpp}}
+\doxysubsubsection{\texorpdfstring{user\_interface()}{user\_interface()}}
+{\footnotesize\ttfamily bool user\+\_\+interface (\begin{DoxyParamCaption}\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Request \&}]{req,  }\item[{rt2\+\_\+assignment1\+::\+Command\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+\+: It receives the commands from the user\+\_\+interface node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & the command received from the client \\
+\hline
+{\em res} & not set\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: true
+\end{DoxyReturn}
+This function sets the global variable start to true if the command received is \char`\"{}start\char`\"{} or it sets it to false if the command is different 

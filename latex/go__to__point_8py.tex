@@ -1,0 +1,275 @@
+\hypertarget{go__to__point_8py}{}\doxysection{scripts/go\+\_\+to\+\_\+point.py File Reference}
+\label{go__to__point_8py}\index{scripts/go\_to\_point.py@{scripts/go\_to\_point.py}}
+
+
+This file implements the behaviour that allows the robot to reach a goal.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{go__to__point_8py_a36304a9f313b0579f7fc69fa01695524}{go\+\_\+to\+\_\+point.\+clbk\+\_\+odom}} (msg)
+\begin{DoxyCompactList}\small\item\em This function is called when new data are available on the topic /odom. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_a31ee48e5cae36821049b572a96b7c8be}{go\+\_\+to\+\_\+point.\+change\+\_\+state}} (state)
+\begin{DoxyCompactList}\small\item\em This function changes the state. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_ac688bb56fa84763ea2edefc30cae032a}{go\+\_\+to\+\_\+point.\+normalize\+\_\+angle}} (angle)
+\begin{DoxyCompactList}\small\item\em This function normalizes angles. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_a9c3011a3065fcbefcc1c5ad8c9979669}{go\+\_\+to\+\_\+point.\+fix\+\_\+yaw}} (des\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em This function orients the robot in the beginning. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_ac8579665c0fbf665f734476554fac37d}{go\+\_\+to\+\_\+point.\+go\+\_\+straight\+\_\+ahead}} (des\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em This function moves the robot in a straight line. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_a4a406386ca62830c19c93949e923f7bd}{go\+\_\+to\+\_\+point.\+fix\+\_\+final\+\_\+yaw}} (des\+\_\+yaw)
+\begin{DoxyCompactList}\small\item\em This function orients the robot in the end. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_ac2587220a4ac9c845bc9c5b0b45d5835}{go\+\_\+to\+\_\+point.\+done}} ()
+\begin{DoxyCompactList}\small\item\em This function stops the robot. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_a2203d17b7e563bee20ed4c988548df45}{go\+\_\+to\+\_\+point.\+go\+\_\+to\+\_\+point}} (goal)
+\begin{DoxyCompactList}\small\item\em This function implements the server behaviour. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{go__to__point_8py_ab92bd6db1ec323a4d795ed6cb40aebe1}{go\+\_\+to\+\_\+point.\+main}} ()
+\begin{DoxyCompactList}\small\item\em This function implements the ros node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a91dbaab25e6080f6b5dbf82cac6ce75c}\label{go__to__point_8py_a91dbaab25e6080f6b5dbf82cac6ce75c}} 
+{\bfseries go\+\_\+to\+\_\+point.\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{go__to__point_8py_acafa50d4a3b16d8605fa03a28b48e828}\label{go__to__point_8py_acafa50d4a3b16d8605fa03a28b48e828}} 
+{\bfseries go\+\_\+to\+\_\+point.\+pose\+\_\+} = Pose()
+\item 
+\mbox{\Hypertarget{go__to__point_8py_ae444f19eb2019982432760ace036ce03}\label{go__to__point_8py_ae444f19eb2019982432760ace036ce03}} 
+int {\bfseries go\+\_\+to\+\_\+point.\+yaw\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{go__to__point_8py_aa2d0ef255bcf5d5faf9ca2764730fb17}\label{go__to__point_8py_aa2d0ef255bcf5d5faf9ca2764730fb17}} 
+int {\bfseries go\+\_\+to\+\_\+point.\+state\+\_\+} = 0
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a57b4090d0abcbcf0bfa2bcb9329d3036}\label{go__to__point_8py_a57b4090d0abcbcf0bfa2bcb9329d3036}} 
+{\bfseries go\+\_\+to\+\_\+point.\+pub\+\_\+} = None
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a03b48b610dbd224a38eb226c1b2ba23d}\label{go__to__point_8py_a03b48b610dbd224a38eb226c1b2ba23d}} 
+{\bfseries go\+\_\+to\+\_\+point.\+desired\+\_\+position\+\_\+} = Point()
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a2fd68a76b8583598a4bceccdeae5d73b}\label{go__to__point_8py_a2fd68a76b8583598a4bceccdeae5d73b}} 
+{\bfseries go\+\_\+to\+\_\+point.\+z}
+\item 
+\mbox{\Hypertarget{go__to__point_8py_ac115eebd2e2cccfd63512fec9d40cf1c}\label{go__to__point_8py_ac115eebd2e2cccfd63512fec9d40cf1c}} 
+bool {\bfseries go\+\_\+to\+\_\+point.\+success} = False
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a67f95834f0959feb3facd17bc7fa2b38}\label{go__to__point_8py_a67f95834f0959feb3facd17bc7fa2b38}} 
+int {\bfseries go\+\_\+to\+\_\+point.\+yaw\+\_\+precision\+\_\+} = math.\+pi / 9
+\item 
+\mbox{\Hypertarget{go__to__point_8py_af74ccf49164d0478ca8343e2031d5813}\label{go__to__point_8py_af74ccf49164d0478ca8343e2031d5813}} 
+int {\bfseries go\+\_\+to\+\_\+point.\+yaw\+\_\+precision\+\_\+2\+\_\+} = math.\+pi / 90
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5}\label{go__to__point_8py_a6a1e4eb20ebd4fce0fc56b0ebfd7a8d5}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+dist\+\_\+precision\+\_\+} = 0.\+1
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a524106fc7667a0927951dfd89d52d6a7}\label{go__to__point_8py_a524106fc7667a0927951dfd89d52d6a7}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+kp\+\_\+a} = -\/3.\+0
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a7bc498652ca66932e704e738b50c297b}\label{go__to__point_8py_a7bc498652ca66932e704e738b50c297b}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+kp\+\_\+d} = 0.\+2
+\item 
+\mbox{\Hypertarget{go__to__point_8py_acb4e14986fafe5cb73bb8ad0c178869d}\label{go__to__point_8py_acb4e14986fafe5cb73bb8ad0c178869d}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+ub\+\_\+a} = 0.\+6
+\item 
+\mbox{\Hypertarget{go__to__point_8py_afecad4058844db05d8321199e25b4498}\label{go__to__point_8py_afecad4058844db05d8321199e25b4498}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+lb\+\_\+a} = -\/0.\+5
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a16c473b9e717200c483d18e66b48152a}\label{go__to__point_8py_a16c473b9e717200c483d18e66b48152a}} 
+float {\bfseries go\+\_\+to\+\_\+point.\+ub\+\_\+d} = 0.\+6
+\item 
+\mbox{\Hypertarget{go__to__point_8py_a64583fad586a7212c40613ec1c3e7c69}\label{go__to__point_8py_a64583fad586a7212c40613ec1c3e7c69}} 
+{\bfseries go\+\_\+to\+\_\+point.\+act\+\_\+s} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file implements the behaviour that allows the robot to reach a goal. 
+
+\begin{DoxyAuthor}{Author}
+Vishal Vallamkonda 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+28/02/2022
+\end{DoxyDate}
+Subscribes to\+: ~\newline
+ /odom /vel
+
+Publishes to\+: ~\newline
+ /cmd\+\_\+vel
+
+Services\+: ~\newline
+ None
+
+Action Services\+: ~\newline
+ /go\+\_\+to\+\_\+point
+
+Description\+: ~\newline
+ This node allows the robot to reach a position with a given orientation. Firstly it orients the robot in the direction of the goal and moves towards it. Once the robot has reached the correct x and y coordinates it rotates to reach the correct orientation. The velocities, both angular and linear are set by the node user\+\_\+interface and are received on the topic /vel. If the goal is set cancelled by the client of the action server then the velocities are all set to zero and the action server is set preempted. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{go__to__point_8py_a31ee48e5cae36821049b572a96b7c8be}\label{go__to__point_8py_a31ee48e5cae36821049b572a96b7c8be}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!change\_state@{change\_state}}
+\index{change\_state@{change\_state}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{change\_state()}{change\_state()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+change\+\_\+state (\begin{DoxyParamCaption}\item[{}]{state }\end{DoxyParamCaption})}
+
+
+
+This function changes the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & the state of the robot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function receives the new state and assigns its value to the global variable states\+\_\+. Then a message is printed to know which one is the new state. \mbox{\Hypertarget{go__to__point_8py_a36304a9f313b0579f7fc69fa01695524}\label{go__to__point_8py_a36304a9f313b0579f7fc69fa01695524}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!clbk\_odom@{clbk\_odom}}
+\index{clbk\_odom@{clbk\_odom}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{clbk\_odom()}{clbk\_odom()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+clbk\+\_\+odom (\begin{DoxyParamCaption}\item[{}]{msg }\end{DoxyParamCaption})}
+
+
+
+This function is called when new data are available on the topic /odom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & the data received on the topic /odom \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function saves the data received by the subscriber on the topic /odom in the global variable position for the information about the current position of the robot. It then changes the format of the orientation from quaternions angles to euler angles; it is the extracted the third elemen of the vector and it is saved on the global variable yaw\+\_\+ \mbox{\Hypertarget{go__to__point_8py_ac2587220a4ac9c845bc9c5b0b45d5835}\label{go__to__point_8py_ac2587220a4ac9c845bc9c5b0b45d5835}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!done@{done}}
+\index{done@{done}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{done()}{done()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function stops the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & None \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function puts to zero all the velocities, angular and linear, and sets the goal as succeeded. \mbox{\Hypertarget{go__to__point_8py_a4a406386ca62830c19c93949e923f7bd}\label{go__to__point_8py_a4a406386ca62830c19c93949e923f7bd}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!fix\_final\_yaw@{fix\_final\_yaw}}
+\index{fix\_final\_yaw@{fix\_final\_yaw}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{fix\_final\_yaw()}{fix\_final\_yaw()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+fix\+\_\+final\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{des\+\_\+yaw }\end{DoxyParamCaption})}
+
+
+
+This function orients the robot in the end. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+yaw} & the desired orientation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function calculates the error between the current orientation and the desired one. It then sets the angular velocity to obtain the correct orientation. If the error is less than a given threshold then the state is changed to done. \mbox{\Hypertarget{go__to__point_8py_a9c3011a3065fcbefcc1c5ad8c9979669}\label{go__to__point_8py_a9c3011a3065fcbefcc1c5ad8c9979669}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!fix\_yaw@{fix\_yaw}}
+\index{fix\_yaw@{fix\_yaw}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{fix\_yaw()}{fix\_yaw()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+fix\+\_\+yaw (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+This function orients the robot in the beginning. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+pos} & the desired x and y coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function calculates the desired orientation to reach the x,y point and set the angular velocity to reach it. If the orientation error is less than a given threshold then the state is changed to the behaviour go straight. \mbox{\Hypertarget{go__to__point_8py_ac8579665c0fbf665f734476554fac37d}\label{go__to__point_8py_ac8579665c0fbf665f734476554fac37d}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!go\_straight\_ahead@{go\_straight\_ahead}}
+\index{go\_straight\_ahead@{go\_straight\_ahead}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{go\_straight\_ahead()}{go\_straight\_ahead()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+go\+\_\+straight\+\_\+ahead (\begin{DoxyParamCaption}\item[{}]{des\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+This function moves the robot in a straight line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+pos} & the desired x and y coordinates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function calculates the desired orientation to reach the x,y point and the distance between the goal both linear and angular. It then sets the linear velocity. It also set an angular velocity proportional to the error to slightly correct the direction of the line when needed. If the distance between the goal is less than a given threshold the state is changed to the fix final orientation behaviour. \mbox{\Hypertarget{go__to__point_8py_a2203d17b7e563bee20ed4c988548df45}\label{go__to__point_8py_a2203d17b7e563bee20ed4c988548df45}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!go\_to\_point@{go\_to\_point}}
+\index{go\_to\_point@{go\_to\_point}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{go\_to\_point()}{go\_to\_point()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+go\+\_\+to\+\_\+point (\begin{DoxyParamCaption}\item[{}]{goal }\end{DoxyParamCaption})}
+
+
+
+This function implements the server behaviour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & the desired position and orientation to obtain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function is called when a request to the server is made. It sets all the global variables needed, then it enteres a while loop. In the while loop it always check if the goal is preempted and if that is the case it sets all the velocities to zero and it set the goal as preempted. If the action server is not preempted it checks which is the state and it calls the corresponding function. \mbox{\Hypertarget{go__to__point_8py_ab92bd6db1ec323a4d795ed6cb40aebe1}\label{go__to__point_8py_ab92bd6db1ec323a4d795ed6cb40aebe1}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!main@{main}}
+\index{main@{main}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function implements the ros node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & None \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: None
+\end{DoxyReturn}
+This function is called when the program is first requested to run. It initializes all the publishers, subscribers, services and then waits for a request for the action server that should come from the user\+\_\+interface node. \mbox{\Hypertarget{go__to__point_8py_ac688bb56fa84763ea2edefc30cae032a}\label{go__to__point_8py_ac688bb56fa84763ea2edefc30cae032a}} 
+\index{go\_to\_point.py@{go\_to\_point.py}!normalize\_angle@{normalize\_angle}}
+\index{normalize\_angle@{normalize\_angle}!go\_to\_point.py@{go\_to\_point.py}}
+\doxysubsubsection{\texorpdfstring{normalize\_angle()}{normalize\_angle()}}
+{\footnotesize\ttfamily def go\+\_\+to\+\_\+point.\+normalize\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{angle }\end{DoxyParamCaption})}
+
+
+
+This function normalizes angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & the angle I want to normalize \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: angle, the normalized angle
+\end{DoxyReturn}
+This function normalizes the angle received as input, it doesn\textquotesingle{}t change the sign but it reduces the magnitude to less than one full circle 
