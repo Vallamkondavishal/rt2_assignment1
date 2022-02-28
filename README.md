@@ -1,5 +1,5 @@
 ## Assignment of the Research Track 2 course 
- GINNE VIKAS REDDY (matricola 5061211)
+ VISHAL VALLAMKONDA (matricola 5071089)
 
 The nodes FSM and position server are written in ros2 , By using ros1_bridge they can be interfaces with the ros nodes and with the simulation in gazebo.
 
@@ -29,7 +29,7 @@ catkin_make
 clone the repository 
 
 ```
-git clone -b ros2 https://github.com/vikasreddy636/rt2_assignment1.git
+git clone -b ros2 https://github.com/Vallamkondavishal/rt2_assignment1.git
 
 ```
 
