@@ -7,7 +7,7 @@ from tf import transformations
 import math
 import actionlib
 import actionlib.msg
-import rt2_assgnment1.msg
+import rt2_assignment1.msg
 
 # robot state variables
 position_ = Point()
@@ -168,7 +168,7 @@ def main():
     # Initialize the subscriber for odometry
     sub_odom = rospy.Subscriber('/odom', Odometry, clbk_odom)
     # Initialise the actiojn server
-    act_s = actionlib.SimpleActionServer('/go_to_point', rt2_assignment1.msg.GotopointAction, go_to_point, auto_start=False)
+    act_s = actionlib.SimpleActionServer('/Gotopoint', rt2_assignment1.msg.GotopointAction, go_to_point, auto_start=False)
     act_s.start()
     rospy.spin()
 
